@@ -1,4 +1,4 @@
-~<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,46 @@
 </head>
 <body>
     <h1>Music digger에 오신 여러분을 환영합니다</h1>
-    <p>당신의 기부느 장르, 시대, 템포에 맞는 음악을 찾아드릴게요!</p>
+    <p>당신의 기분, 장르, 시대, 템포에 맞는 음악을 찾아드릴게요!</p>
+
+    <h2>원하는 디깅 기준을 선택하세요</h2>
+    <form action="/playlist" method="post">
+        <label>감정:
+            <select name="mood">
+                <option value="기쁨">기쁨</option>
+                <option value="슬픔">슬픔</option>
+                <option value="분노">분노</option>
+                <option value="평온">평온</option>
+            </select>
+        </label><br><br>
+
+        <label>장르:
+            <select name="genre">
+                <option value="재즈">재즈</option>
+                <option value="록">록</option>
+                <option value="힙합">힙합</option>
+                <option value="발라드">발라드</option>
+            </select>
+        </label><br><br>
+
+        <label>시대:
+            <select name="era">
+                <option value="1980s">1980s</option>
+                <option value="1990s">1990s</option>
+                <option value="2000s">2000s</option>
+                <option value="2010s">2010s</option>
+            </select>
+        </label><br><br>
+
+        <label>템포:
+            <select name="tempo">
+                <option value="느림">느림</option>
+                <option value="중간">중간</option>
+                <option value="빠름">빠름</option>
+            </select>
+        </label><br><br>
+
+        <button type="submit">🎵 디깅하기</button>
+    </form>
 </body>
 </html>

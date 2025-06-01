@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>추천 플레이리스트</title>
+</head>
+<body>
+    <h1>당신을 위한 추천 플레이리스트 🎧</h1>
+
+    <p><strong>기준:</strong> 
+        감정 - {{ mood }},
+        장르 - {{ genre }},
+        시대 - {{ era }},
+        템포 - {{ tempo }}
+    </p>
+
+    <hr>
+
+    <ol>
+        {% for song in playlist %}
+        <li>
+            <strong>{{ song.title }}</strong> - {{ song.artist }}<br>
+            <small>{{ song.year }} | {{ song.genre }} | {{ song.tempo }}</small>
+        </li>
+        {% endfor %}
+    </ol>
+
+    <hr>
+
+    <form action="/create_youtube_playlist" method="post">
+        <!-- 숨겨진 입력값으로 기준 전달 -->
+        <input type="hidden" name="mood" value="{{ mood }}">
+        <input type="hidden" name="genre" value="{{ genre }}">
+        <input type="hidden" name="era" value="{{ era }}">
+        <input type="hidden" name="tempo" value="{{ tempo }}">
+        <button type="submit">📺 유튜브 플레이리스트로 만들기</button>
+    </form>
+
+    <br><br>
+    <a href="/">🔙 다시 디깅하기</a>
+</body>
+</html>
